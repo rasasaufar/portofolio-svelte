@@ -463,7 +463,7 @@
 
 		<div class="subcard punch-card" style="background: var(--bg-blue);">
 			<h3>Send A Message</h3>
-			<p class="mono" style="margin:0.6rem 0 0;">Stored to Supabase: contact_messages</p>
+			<p class="mono" style="margin:0.6rem 0 0;">Your message goes straight to my inbox.</p>
 
 			<form class="contact-form" onsubmit={handleContactSubmit}>
 				<label class="form-field">
