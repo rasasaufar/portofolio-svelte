@@ -50,6 +50,7 @@ export type Certificate = {
   id?: string;
   score?: string;
   skills: string[];
+  category: 'core' | 'additional';
   verified: boolean;
 };
 
@@ -167,28 +168,28 @@ export const portfolioData = {
       period: 'Aug 2024 - Present',
       logo: 'https://karir.traspac.id/assets/img/logotraspac.png',
       description:
-        'Menjadi IT Implementor, IT Infrastructure dan Data Analis. Menghandle beberapa project di Kementerian dan Militer.',
+        'Serve as an IT Implementor, IT Infrastructure specialist, and Data Analyst, leading multiple projects across government ministries and military institutions.',
       responsibilities: [
-        'Kemenlu RI - Bekerja onsite bersama Subdit SISTIK Direktorat PWNI, memberikan dukungan teknis pengembangan situs web "Safe Travel" dan manajemen infrastruktur server "Portal Peduli WNI" menggunakan Ubuntu',
-        'Kemenlu RI - Menyiapkan dokumentasi teknis bulanan (laporan pemeliharaan, analisis bug, panduan pemecahan masalah, dan manajemen permintaan perubahan)',
-        'Mabes TNI - Mengelola operasi basis data penting, termasuk pencadangan dan pemulihan rutin di lingkungan produksi untuk memastikan integritas data',
-        'Mabes TNI - Menerapkan penerapan aplikasi Sisfopajak pada infrastruktur server fisik serta melakukan pengujian fungsional dan verifikasi komprehensif pasca-penerapan',
-        'Mabes TNI - Menjadi Presenter Pelatihan Aplikasi Sistem Data Alutsista dan Pendukungnya di Mabes TNI, Mabes AL, dan Pusdatin Kementerian Pertahanan',
-        'Kementerian Hilirisasi dan Investasi - Mengelola Sistem Presensi di Kepegawaian BKPM',
+        'Kemenlu RI - Worked onsite with the SISTIK Sub-Directorate of the PWNI Directorate to provide technical support for developing the "Safe Travel" website and managing the "Portal Peduli WNI" server infrastructure using Ubuntu',
+        'Kemenlu RI - Prepared monthly technical documentation, including maintenance reports, bug analyses, troubleshooting guides, and change request management',
+        'Mabes TNI - Managed critical database operations, including routine backup and recovery in production environments to ensure data integrity',
+        'Mabes TNI - Led Sisfopajak application Deployment on physical server infrastructure and executed comprehensive post-deployment functional testing and verification',
+        'Mabes TNI - Served as presenter for training on the Alutsista Data System and supporting applications at Mabes TNI, Mabes AL, and the Ministry of Defense Data and Information Center',
+        'Ministry of Downstreaming and Investment - Managed the attendance system for BKPM human resources operations',
       ],
       tech: ['Ubuntu', 'Server Infrastructure', 'Database Management', 'Application Deployment'],
       gallery: [
         {
           image: '/images/gallery/traspac-kemenlu.png',
-          caption: 'Kementerian Luar Negeri RI',
+          caption: 'Ministry of Foreign Affairs of the Republic of Indonesia',
           description:
-            'Kegiatan dukungan teknis dan bimbingan teknis bersama Subdit SISTIK Direktorat PWNI di Kementerian Luar Negeri Republik Indonesia.',
+            'Delivered technical support and technical guidance activities with the SISTIK Sub-Directorate of the PWNI Directorate at the Ministry of Foreign Affairs of the Republic of Indonesia.',
         },
         {
           image: '/images/gallery/traspac-kemhan.png',
-          caption: 'Pusdatin Kemhan RI',
+          caption: 'Ministry of Defense Data and Information Center',
           description:
-            'Menjadi presenter pelatihan aplikasi Sistem Data Alutsista dan Pendukungnya di Pusat Data dan Informasi Kementerian Pertahanan Republik Indonesia.',
+            'Served as the training presenter for the Alutsista Data System and supporting applications at the Ministry of Defense Data and Information Center of the Republic of Indonesia.',
         },
       ],
     },
@@ -198,22 +199,22 @@ export const portfolioData = {
       period: 'Sep 2023 - Dec 2023',
       logo: 'https://media.licdn.com/dms/image/v2/C560BAQHq1FwKfCDJZA/company-logo_200_200/company-logo_200_200/0/1667985560103/pt_metronet_logo?e=2147483647&v=beta&t=gsRuAkezzvj65j2AGShob4KmQDCnAjpuGbO4YH5xGZE',
       description:
-        'Menjadi bagian dari tim pelaksana proyek Digitalisasi Arsip di Badan Pertanahan Nasional (BPN) Kota Pekalongan untuk mendukung transformasi data fisik ke digital.',
+        'Served on the Archive Digitization project team at the National Land Agency (BPN) of Pekalongan City, supporting the transformation of physical records into digital archives.',
       responsibilities: [
-        'Bekerja pada proyek Digitalisasi di Kantor Badan Pertanahan Nasional (BPN) Kota Pekalongan',
-        'Menyortir dan merapikan berbagai album dan dokumen fisik dengan teliti sebelum proses digitalisasi',
-        'Melakukan pemindaian (scanning) dokumen dalam jumlah besar per harinya untuk persiapan pengarsipan',
-        'Mengedit dan mengoptimalkan hasil scan menggunakan perangkat lunak NAPS2 agar tajam, lurus, dan mudah dibaca',
-        'Bekerja dengan disiplin tinggi di bawah tekanan untuk selalu mencapai target pemindaian maupun tenggat waktu',
-        'Menjaga kelengkapan, kerahasiaan, dan integritas dokumen-dokumen tanah yang bernilai tinggi selama project berlangsung',
+        'Contributed to the digitization project at the National Land Agency (BPN) Office of Pekalongan City',
+        'Sorted and organized physical albums and documents with high accuracy prior to digitization',
+        'Performed high-volume daily document scanning to support archival preparation',
+        'Edited and optimized scanned outputs using NAPS2 to ensure clarity, alignment, and readability',
+        'Maintained high discipline and performance under pressure to consistently meet scanning targets and deadlines',
+        'Safeguarded the completeness, confidentiality, and integrity of high-value land documents throughout the project',
       ],
       tech: ['NAPS2', 'Document Editing', 'Data Management', 'Scanner Handling'],
       gallery: [
         {
           image: '/images/gallery/bpn-closing.jpeg',
-          caption: 'Penutupan Project',
+          caption: 'Project Closing',
           description:
-            'Momen kebersamaan foto dengan seluruh tim pelaksana pada penghujung masa proyek Digitalisasi Arsip BPN Kota Pekalongan setelah berhasil menyelesaikan seluruh target pemindaian.',
+            'Team closing moment with the full implementation team at the end of the BPN Pekalongan City Archive Digitization project after successfully achieving all scanning targets.',
         },
       ],
     },
@@ -222,11 +223,11 @@ export const portfolioData = {
       position: 'Project-Based Virtual Intern : UI / UX Designer',
       period: 'Jul 2023 - Aug 2023',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVYFavWOvYAbq_z018Y5-cZNuutUC_256vVw&s',
-      description: 'Project-Based Virtual Internship bersama Rakamin Academy (Niagahoster x Rakamin Academy).',
+      description: 'Completed a project-based virtual internship with Rakamin Academy (Niagahoster x Rakamin Academy).',
       responsibilities: [
-        'Menyelesaikan berbagai tugas yang berkaitan dengan aktivitas UI/UX Designer dari Niagahoster',
-        'Merancang antarmuka pengguna (User Interface) dan pengalaman pengguna (User Experience)',
-        'Membuat wireframe dan prototipe interaktif untuk memvisualisasikan alur penggunaan (seperti Checkout Flow)',
+        'Completed project assignments aligned with the UI/UX Designer role at Niagahoster',
+        'Designed user interfaces and user experiences to improve usability and customer flow',
+        'Built wireframes and interactive prototypes to visualize end-to-end user journeys, including Checkout Flow',
       ],
       tech: ['User Experience (UX)', 'Prototyping', 'User Interface', 'Wireframing'],
       gallery: [
@@ -234,13 +235,13 @@ export const portfolioData = {
           image: '/images/gallery/Niagahoster.png',
           caption: 'Checkout Flow',
           description:
-            'Hasil desain alur antarmuka pengguna (Checkout Flow) website Niagahoster yang dirancang ulang untuk memberikan pengalaman berbelanja dan pembayaran yang aman, mudah dicerna, dan efisien bagi pengguna.',
+            'Redesigned Checkout Flow for the Niagahoster website to deliver a secure, intuitive, and efficient shopping and payment experience.',
         },
         {
           image: '/images/gallery/5.png',
           caption: 'Certificate of Completion',
           description:
-            'Sertifikat kelulusan resmi yang memvalidasi pencapaian, keberhasilan, serta pengembangan keterampilan esensial sebagai UI/UX Designer selama program Virtual Internship.',
+            'Official completion certificate validating achievements, successful program delivery, and essential UI/UX skill development during the virtual internship.',
         },
       ],
     },
@@ -249,24 +250,24 @@ export const portfolioData = {
       position: 'Project-Based Virtual Intern : UI / UX Designer',
       period: 'Jul 2023 - Aug 2023',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxW4zjU4gLFxMQ7K2mBzwpxOHJId1nbb28LA&s',
-      description: 'Project-Based Virtual Internship bersama Rakamin Academy (Nuri x Rakamin Academy).',
+      description: 'Completed a project-based virtual internship with Rakamin Academy (Nuri x Rakamin Academy).',
       responsibilities: [
-        'Menyelesaikan berbagai tugas proyek yang berkaitan dengan peran UI/UX Designer di Nuri',
-        'Mengerjakan solusi desain dari mulai riset hingga pembuatan User Interface dan User Experience',
-        'Melakukan perancangan wireframe dasar hingga high-fidelity prototype',
+        'Completed project assignments aligned with the UI/UX Designer role at Nuri',
+        'Developed design solutions from research through User Interface and User Experience execution',
+        'Created design deliverables from low-fidelity wireframes to high-fidelity prototypes',
       ],
       tech: ['User Experience (UX)', 'Prototyping', 'User Interface', 'Wireframing'],
       gallery: [
         {
           image: '/images/gallery/Nuri.png',
-          caption: 'Final Task Nuri',
+          caption: 'Nuri Final Task',
           description:
-            'Hasil proyek akhir yang difokuskan pada perancangan antarmuka pengguna untuk fitur COD di platform e-commerce Nuri.',
+            'Final project focused on designing the user interface for the COD feature on the Nuri e-commerce platform.',
         },
         {
           image: '/images/gallery/6.png',
           caption: 'Certificate of Completion',
-          description: 'Sertifikat kelulusan resmi dari program Virtual Internship Nuri x Rakamin Academy.',
+          description: 'Official completion certificate from the Nuri x Rakamin Academy virtual internship program.',
         },
       ],
     },
@@ -276,25 +277,25 @@ export const portfolioData = {
       period: 'Sep 2021 - Oct 2021',
       logo: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Lambang_Kabupaten_Pekalongan.JPG',
       description:
-        'Menjalani masa magang dengan fokus pada desain antarmuka dan pengembangan sistem pendukung untuk wilayah lokal.',
+        'Completed an internship focused on interface design and supporting system development for local government initiatives.',
       responsibilities: [
-        'Membuat rancangan UI/UX dari aplikasi e-commerce yang ditujukan untuk memajukan UMKM di Kabupaten Pekalongan',
-        'Mempelajari berbagai keterampilan (skills) baru dan langsung mengimplementasikannya pada tugas sehari-hari untuk meningkatkan efisiensi dan produktivitas',
-        'Berpartisipasi aktif dalam lingkungan kerja instansi, membantu rekan tim, serta melakukan kolaborasi yang relevan dengan kebutuhan pengguna',
+        'Designed the UI/UX for an e-commerce application aimed at supporting UMKM growth in Pekalongan Regency',
+        'Rapidly acquired new skills and applied them to daily tasks to improve operational efficiency and productivity',
+        'Collaborated actively in the agency work environment, supported team members, and aligned deliverables with user needs',
       ],
       tech: ['UI/UX Design', 'Figma', 'User Research', 'Prototyping'],
       gallery: [
         {
           image: '/images/gallery/dinkominfo.jpg',
-          caption: 'Gedung Dinkominfo',
+          caption: 'Dinkominfo Office',
           description:
-            'Gedung Dinas Komunikasi dan Informatika Kabupaten Pekalongan tempat saya melaksanakan program magang.',
+            'Office of the Pekalongan Regency Department of Communication and Informatics, where the internship program was carried out.',
         },
         {
           image: '/images/gallery/Magang.png',
           caption: 'E-Commerce UMKM',
           description:
-            'Desain UI/UX (user interface & user experience) untuk platform e-commerce yang dirancang agar terjangkau dan mudah digunakan oleh pelaku UMKM.',
+            'UI/UX design for an e-commerce platform developed to be accessible and easy to use for UMKM business owners.',
         },
       ],
     },
@@ -303,7 +304,7 @@ export const portfolioData = {
     {
       name: 'Fake Project',
       type: 'Landing Page',
-      description: 'Membuat Landing Page Website Restaurant',
+      description: 'Designed and developed a restaurant website landing page.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://drive.google.com/file/d/1hqhdVyanQeePJewHR8PJ9kK07BdrkfOJ/view?usp=sharing',
       github: '',
@@ -312,7 +313,7 @@ export const portfolioData = {
     {
       name: 'Final Project Redesign Maxim',
       type: 'Redesign App',
-      description: 'Redesign Aplikasi Maxim dan menambahkan fitur Top Up dan Pembayaran',
+      description: 'Redesigned the Maxim application and added Top Up and payment features.',
       tech: ['UI/UX Design', 'Figma', 'Prototyping'],
       demo: 'https://drive.google.com/file/d/14rentR_FyblFyTi5F63m0UeVRDSomjyJ/view?usp=sharing',
       github: '',
@@ -321,7 +322,7 @@ export const portfolioData = {
     {
       name: 'Final Task Nuri x Rakamin Academy',
       type: 'Feature Design',
-      description: 'Menambahkan fitur Cash On Delivery (COD) pada aplikasi e-commerce',
+      description: 'Designed and integrated a Cash On Delivery (COD) feature for an e-commerce application.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://drive.google.com/file/d/1GoF12FssWWEjVzu2kExP58ZMcDjMV4zG/view?usp=sharing',
       github: '',
@@ -330,25 +331,25 @@ export const portfolioData = {
     {
       name: 'Final Task Niagahoster x Rakamin Academy',
       type: 'Web Design',
-      description: 'Membuat Checkout Flow pada website Niagahoster',
+      description: 'Designed a Checkout Flow for the Niagahoster website.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://drive.google.com/file/d/1GdUdGYV2Tg1zPnZXwADqJSzOUguJFTPj/view?usp=sharing',
       github: '',
       image: '/images/portfolio/Niagahoster.png',
     },
     {
-      name: 'Aplikasi Belanja UMKM Di Kajen',
+      name: 'UMKM Shopping Application in Kajen',
       type: 'App Design',
-      description: 'Membuat UI Design Aplikasi Belanja untuk UMKM di Kajen, Kabupaten Pekalongan',
+      description: 'Designed the UI for a shopping application for UMKM in Kajen, Pekalongan Regency.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://bit.ly/ProtoypeMagang',
       github: '',
       image: '/images/portfolio/Magang.png',
     },
     {
-      name: 'Mini Task di Short Class @myskill.id',
+      name: 'Mini Task in Short Class @myskill.id',
       type: 'Mini Task',
-      description: 'Mengerjakan Task yang diberikan pada saat mini task',
+      description: 'Completed the design tasks assigned during the mini task program.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://www.figma.com/proto/LsBpusfnm1lkL8gUjjGSLR/MiniTask---MySkill?page-id=0%3A1&type=design&node-id=2-541&viewport=609%2C593%2C0.36&t=Fq9mTWEDSw0SxcEg-1&scaling=scale-down&starting-point-node-id=2%3A541&mode=design',
       github: '',
@@ -364,6 +365,7 @@ export const portfolioData = {
       description: 'Pelatihan wawasan karir di bidang Data Analytics melalui program Digital Talent Scholarship.',
       id: '2299746850-4500',
       skills: ['Data Analytics', 'Data Visualization'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -375,6 +377,7 @@ export const portfolioData = {
         'Pelatihan pengenalan Data Science dan penerapannya di berbagai sektor industri melalui Digital Talent Scholarship.',
       id: '2299818850-4751',
       skills: ['Data Science', 'Data Analysis'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -385,6 +388,7 @@ export const portfolioData = {
       description: 'Kursus keamanan IT dari Google IT Support Specialization.',
       id: 'TDN7P3MAAEG7',
       skills: ['Cybersecurity', 'Encryption', 'Network Security'],
+      category: 'core',
       verified: true,
     },
     {
@@ -395,6 +399,7 @@ export const portfolioData = {
       description: 'Kursus administrasi sistem dari Google IT Support Specialization.',
       id: 'RC8NK9PBR5XG',
       skills: ['Server Management', 'Directory Services', 'IT Infrastructure'],
+      category: 'core',
       verified: true,
     },
     {
@@ -405,6 +410,7 @@ export const portfolioData = {
       description: 'Kursus tentang sistem operasi dari Google IT Support Specialization.',
       id: '7KU8JRMPQVHJ',
       skills: ['Windows', 'Linux', 'File Management', 'Command Line'],
+      category: 'core',
       verified: true,
     },
     {
@@ -422,6 +428,7 @@ export const portfolioData = {
         'Troubleshooting',
         'Operating Systems',
       ],
+      category: 'core',
       verified: true,
     },
     {
@@ -432,6 +439,7 @@ export const portfolioData = {
       description: 'Kursus jaringan komputer dari Google IT Support Specialization.',
       id: '2FLPLT9K6MXS',
       skills: ['TCP/IP', 'DNS', 'DHCP', 'Network Troubleshooting'],
+      category: 'core',
       verified: true,
     },
     {
@@ -442,6 +450,7 @@ export const portfolioData = {
       description: 'Kursus dasar dukungan teknis dari Google IT Support Specialization.',
       id: '7C2ZULPDA5P6',
       skills: ['Troubleshooting', 'Customer Service', 'Operating Systems'],
+      category: 'core',
       verified: true,
     },
     {
@@ -453,6 +462,7 @@ export const portfolioData = {
       score: '542',
       id: 'EV/TO4/10/2023/0159',
       skills: ['English Proficiency', 'TOEFL'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -463,6 +473,7 @@ export const portfolioData = {
       description: 'Sertifikat kelulusan bootcamp intensif UI-UX Research and Design Fullstack.',
       id: 'MS-1/9/2023-5qlzkE6XeBcbQREEVF0I',
       skills: ['User Interface', 'User Experience (UX)', 'Design Research'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -473,6 +484,7 @@ export const portfolioData = {
       description: 'Sertifikat kompetensi UI/UX Designer melalui program virtual internship Nuri x Rakamin Academy.',
       id: '212536IAPMGIN2672023',
       skills: ['Sketching', 'Design Thinking', 'User Interface', 'User Experience', 'Prototyping'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -483,6 +495,7 @@ export const portfolioData = {
       description: 'Pelatihan desain UI/UX menggunakan Figma.',
       id: '48508/UIX/LM/07/2023',
       skills: ['Figma', 'User Interface Design'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -493,6 +506,7 @@ export const portfolioData = {
       description: 'Pelatihan dasar User Experience Design.',
       id: '77DF6D121A-77F17BB889-75BB1E65BD',
       skills: ['User Experience (UX)', 'UX Research', 'UX Writing'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -503,6 +517,7 @@ export const portfolioData = {
       description: 'Pelatihan dasar User Interface Design.',
       id: '77DF6D121A-75C17F8C7B-75BB1E65BD',
       skills: ['User Interface Design', 'Visual Design', 'Layout'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -514,6 +529,7 @@ export const portfolioData = {
         'Sertifikat kompetensi UI/UX Designer melalui program virtual internship Niagahoster x Rakamin Academy.',
       id: '212536IAPMGIN3072023',
       skills: ['User Journeys', 'Process Design', 'UI Design', 'UX Research', 'Wireframing', 'Prototyping'],
+      category: 'additional',
       verified: true,
     },
     {
@@ -524,6 +540,7 @@ export const portfolioData = {
       description:
         'Sertifikasi resmi AWS yang memvalidasi pemahaman dasar tentang layanan AWS Cloud, arsitektur, dan best practices. Berlaku hingga Mei 2026.',
       skills: ['Cloud Computing', 'AWS Services', 'Cloud Architecture', 'Security'],
+      category: 'core',
       verified: true,
     },
     {
@@ -534,6 +551,7 @@ export const portfolioData = {
       description: 'Sertifikat pelatihan melalui program beasiswa Digital Talent Scholarship oleh Kominfo.',
       id: '1955634840-1099/FGA/BLSDM.Kominfo/2023',
       skills: ['Cloud Computing'],
+      category: 'core',
       verified: true,
     },
     {
@@ -544,6 +562,7 @@ export const portfolioData = {
       description:
         'Kelulusan program AWS Academy Cloud Foundations yang mencakup konsep dasar cloud, layanan inti AWS, keamanan, dan arsitektur.',
       skills: ['Cloud Foundations', 'AWS Core Services', 'Cloud Security'],
+      category: 'core',
       verified: true,
     },
     {
@@ -554,6 +573,7 @@ export const portfolioData = {
       description: 'Sertifikasi kompetensi nasional sebagai Junior Web Developer dari BNSP. Berlaku hingga Agustus 2025.',
       id: '62019 2513 18247 2022',
       skills: ['CSS', 'HTML', 'Web Development'],
+      category: 'core',
       verified: true,
     },
   ] satisfies Certificate[],

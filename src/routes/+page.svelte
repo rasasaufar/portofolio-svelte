@@ -18,6 +18,10 @@
 	const selectedExperience = $derived(portfolioData.experiences[selectedExperienceIndex]);
 	const selectedGallery = $derived(selectedExperience?.gallery ?? []);
 	const selectedGalleryItem = $derived(selectedGallery[selectedGalleryIndex]);
+	const coreCertificates = $derived(portfolioData.certificates.filter((certificate) => certificate.category === 'core'));
+	const additionalCertificates = $derived(
+		portfolioData.certificates.filter((certificate) => certificate.category === 'additional')
+	);
 
 	function openGallery(experienceIndex: number, galleryIndex: number) {
 		selectedExperienceIndex = experienceIndex;
@@ -384,34 +388,77 @@
 		<h2 class="section-title">Achievements and Certifications</h2>
 	</div>
 
-	<div class="credentials-list grid-3" style="margin-top:1rem;">
-		{#each portfolioData.certificates as certificate, index}
-			<article class="subcard punch-card fade-up" style={`--delay:${index + 1}`}>
-				<div class="cert-logo">
-					<img src={certificate.image} alt={certificate.issuer} loading="lazy" />
-				</div>
-				<h4>{certificate.name}</h4>
-				<p class="mono" style="margin:0.3rem 0;">{certificate.issuer} | {certificate.year}</p>
-				<p style="margin:0;">{certificate.description}</p>
+	<div class="credential-group credential-group-core" style="margin-top:1rem;">
+		<div class="credential-group-head">
+			<h3>Core IT & Cloud Credentials</h3>
+			<p class="mono" style="margin:0;">Priority certifications for infrastructure, cloud, and professional IT credibility</p>
+		</div>
 
-				{#if certificate.score}
-					<p class="mono" style="margin:0.55rem 0 0;">Score: {certificate.score}</p>
-				{/if}
+		<div class="credentials-list grid-3" style="margin-top:0.85rem;">
+			{#each coreCertificates as certificate, index}
+				<article class="subcard punch-card fade-up credential-card credential-card-core" style={`--delay:${index + 1}`}>
+					<div class="cert-logo">
+						<img src={certificate.image} alt={certificate.issuer} loading="lazy" />
+					</div>
+					<h4>{certificate.name}</h4>
+					<p class="mono" style="margin:0.3rem 0;">{certificate.issuer} | {certificate.year}</p>
+					<p style="margin:0;">{certificate.description}</p>
 
-				{#if certificate.id}
-					<p class="mono" style="margin:0.2rem 0 0;">Credential ID: {certificate.id}</p>
-				{/if}
+					{#if certificate.score}
+						<p class="mono" style="margin:0.55rem 0 0;">Score: {certificate.score}</p>
+					{/if}
 
-				<div class="pill-row" style="margin-top:0.65rem;">
-					{#each certificate.skills as skill}
-						<span class="pill" style="background: var(--bg-main);">{skill}</span>
-					{/each}
-				</div>
+					{#if certificate.id}
+						<p class="mono" style="margin:0.2rem 0 0;">Credential ID: {certificate.id}</p>
+					{/if}
 
-				<p class="mono" style="margin:0.75rem 0 0;">{certificate.verified ? 'Verified' : 'Completed'}</p>
-			</article>
-		{/each}
+					<div class="pill-row" style="margin-top:0.65rem;">
+						{#each certificate.skills as skill}
+							<span class="pill" style="background: var(--bg-main);">{skill}</span>
+						{/each}
+					</div>
+
+					<p class="mono" style="margin:0.75rem 0 0;">{certificate.verified ? 'Verified' : 'Completed'}</p>
+				</article>
+			{/each}
+		</div>
 	</div>
+
+	<details class="credential-group credential-group-additional" style="margin-top:1rem;">
+		<summary class="credentials-summary">
+			<strong>Additional Training & Design Explorations</strong>
+			<span class="mono">{additionalCertificates.length} credentials</span>
+		</summary>
+
+		<div class="credentials-list grid-2 credentials-list-compact" style="margin-top:0.85rem;">
+			{#each additionalCertificates as certificate}
+				<article class="subcard punch-card credential-card credential-card-additional">
+					<div class="cert-logo">
+						<img src={certificate.image} alt={certificate.issuer} loading="lazy" />
+					</div>
+					<h4>{certificate.name}</h4>
+					<p class="mono" style="margin:0.3rem 0;">{certificate.issuer} | {certificate.year}</p>
+					<p style="margin:0;">{certificate.description}</p>
+
+					{#if certificate.score}
+						<p class="mono" style="margin:0.55rem 0 0;">Score: {certificate.score}</p>
+					{/if}
+
+					{#if certificate.id}
+						<p class="mono" style="margin:0.2rem 0 0;">Credential ID: {certificate.id}</p>
+					{/if}
+
+					<div class="pill-row" style="margin-top:0.65rem;">
+						{#each certificate.skills as skill}
+							<span class="pill" style="background: var(--bg-soft);">{skill}</span>
+						{/each}
+					</div>
+
+					<p class="mono" style="margin:0.75rem 0 0;">{certificate.verified ? 'Verified' : 'Completed'}</p>
+				</article>
+			{/each}
+		</div>
+	</details>
 </section>
 
 <section id="research" class="section-card section-research section-gap fade-up" style="--delay:5;" data-stamp="research">

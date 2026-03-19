@@ -194,6 +194,73 @@ main {
   background: var(--bg-soft);
 }
 
+.credential-group {
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard-sm);
+  padding: 0.85rem;
+  background: #fff;
+}
+
+.credential-group-core {
+  background: var(--bg-blue);
+}
+
+.credential-group-additional {
+  background: var(--bg-soft);
+}
+
+.credential-group-head h3 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+  text-transform: uppercase;
+}
+
+.credentials-summary {
+  list-style: none;
+  cursor: pointer;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard-sm);
+  background: var(--bg-mint);
+  padding: 0.55rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.credentials-summary::-webkit-details-marker {
+  display: none;
+}
+
+.credentials-summary::after {
+  content: '+';
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+
+.credential-group-additional[open] .credentials-summary::after {
+  content: '-';
+}
+
+.credentials-list-compact {
+  gap: 0.75rem;
+}
+
+.credential-card-additional {
+  padding: 0.75rem;
+}
+
+.credential-card-additional h4 {
+  font-size: 0.93rem;
+}
+
+.credential-card-additional .cert-logo {
+  width: clamp(100px, 22vw, 148px);
+  height: clamp(50px, 10vw, 70px);
+}
+
 .section-research {
   background: var(--bg-mint);
 }
