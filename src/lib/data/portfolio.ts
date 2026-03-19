@@ -34,6 +34,7 @@ export type Experience = {
 export type Project = {
   name: string;
   type: string;
+  category: 'Infrastructure' | 'UI/UX';
   description: string;
   tech: string[];
   demo?: string;
@@ -302,17 +303,25 @@ export const portfolioData = {
   ] satisfies Experience[],
   projects: [
     {
-      name: 'Fake Project',
-      type: 'Landing Page',
-      description: 'Designed and developed a restaurant website landing page.',
-      tech: ['UI/UX Design', 'Figma'],
-      demo: 'https://drive.google.com/file/d/1hqhdVyanQeePJewHR8PJ9kK07BdrkfOJ/view?usp=sharing',
-      github: '',
-      image: '/images/portfolio/Aarss.png',
+      name: 'Automated Database Backup & Rolling Retention System',
+      type: 'Infrastructure Automation',
+      category: 'Infrastructure',
+      description:
+        'Engineered a robust Bash scripting solution for automated daily backups via Cron. Implemented a 10-day rolling retention policy across dual servers to optimize storage and ensure disaster recovery readiness. Managed application deployments utilizing SVN.',
+      tech: ['Linux', 'Bash', 'Cron', 'SVN', 'Disaster Recovery'],
+    },
+    {
+      name: 'Server Deployment & Process Management',
+      type: 'Infrastructure Deployment',
+      category: 'Infrastructure',
+      description:
+        'Executed the end-to-end deployment of the SISFOPAJAK application on bare-metal Ubuntu servers. Configured process management using PM2 to ensure zero-downtime restarts and high availability in a high-security production environment.',
+      tech: ['Ubuntu', 'PM2', 'Deployment', 'Server Admin'],
     },
     {
       name: 'Final Project Redesign Maxim',
-      type: 'Redesign App',
+      type: 'Frontend Explorations',
+      category: 'UI/UX',
       description: 'Redesigned the Maxim application and added Top Up and payment features.',
       tech: ['UI/UX Design', 'Figma', 'Prototyping'],
       demo: 'https://drive.google.com/file/d/14rentR_FyblFyTi5F63m0UeVRDSomjyJ/view?usp=sharing',
@@ -320,17 +329,9 @@ export const portfolioData = {
       image: '/images/portfolio/Maxim.png',
     },
     {
-      name: 'Final Task Nuri x Rakamin Academy',
-      type: 'Feature Design',
-      description: 'Designed and integrated a Cash On Delivery (COD) feature for an e-commerce application.',
-      tech: ['UI/UX Design', 'Figma'],
-      demo: 'https://drive.google.com/file/d/1GoF12FssWWEjVzu2kExP58ZMcDjMV4zG/view?usp=sharing',
-      github: '',
-      image: '/images/portfolio/Nuri.png',
-    },
-    {
       name: 'Final Task Niagahoster x Rakamin Academy',
-      type: 'Web Design',
+      type: 'Frontend Explorations',
+      category: 'UI/UX',
       description: 'Designed a Checkout Flow for the Niagahoster website.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://drive.google.com/file/d/1GdUdGYV2Tg1zPnZXwADqJSzOUguJFTPj/view?usp=sharing',
@@ -338,8 +339,19 @@ export const portfolioData = {
       image: '/images/portfolio/Niagahoster.png',
     },
     {
+      name: 'Final Task Nuri x Rakamin Academy',
+      type: 'Feature Design',
+      category: 'UI/UX',
+      description: 'Designed and integrated a Cash On Delivery (COD) feature for an e-commerce application.',
+      tech: ['UI/UX Design', 'Figma'],
+      demo: 'https://drive.google.com/file/d/1GoF12FssWWEjVzu2kExP58ZMcDjMV4zG/view?usp=sharing',
+      github: '',
+      image: '/images/portfolio/Nuri.png',
+    },
+    {
       name: 'UMKM Shopping Application in Kajen',
       type: 'App Design',
+      category: 'UI/UX',
       description: 'Designed the UI for a shopping application for UMKM in Kajen, Pekalongan Regency.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://bit.ly/ProtoypeMagang',
@@ -347,8 +359,19 @@ export const portfolioData = {
       image: '/images/portfolio/Magang.png',
     },
     {
+      name: 'Fake Project',
+      type: 'Landing Page',
+      category: 'UI/UX',
+      description: 'Designed and developed a restaurant website landing page.',
+      tech: ['UI/UX Design', 'Figma'],
+      demo: 'https://drive.google.com/file/d/1hqhdVyanQeePJewHR8PJ9kK07BdrkfOJ/view?usp=sharing',
+      github: '',
+      image: '/images/portfolio/Aarss.png',
+    },
+    {
       name: 'Mini Task in Short Class @myskill.id',
       type: 'Mini Task',
+      category: 'UI/UX',
       description: 'Completed the design tasks assigned during the mini task program.',
       tech: ['UI/UX Design', 'Figma'],
       demo: 'https://www.figma.com/proto/LsBpusfnm1lkL8gUjjGSLR/MiniTask---MySkill?page-id=0%3A1&type=design&node-id=2-541&viewport=609%2C593%2C0.36&t=Fq9mTWEDSw0SxcEg-1&scaling=scale-down&starting-point-node-id=2%3A541&mode=design',

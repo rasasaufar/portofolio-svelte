@@ -18,6 +18,10 @@
 	const selectedExperience = $derived(portfolioData.experiences[selectedExperienceIndex]);
 	const selectedGallery = $derived(selectedExperience?.gallery ?? []);
 	const selectedGalleryItem = $derived(selectedGallery[selectedGalleryIndex]);
+	let activeProjectCategory = $state<'Infrastructure' | 'UI/UX'>('Infrastructure');
+	const filteredProjects = $derived(
+		portfolioData.projects.filter((project) => project.category === activeProjectCategory)
+	);
 	const coreCertificates = $derived(portfolioData.certificates.filter((certificate) => certificate.category === 'core'));
 	const additionalCertificates = $derived(
 		portfolioData.certificates.filter((certificate) => certificate.category === 'additional')
@@ -349,36 +353,66 @@
 		<h2 class="section-title">Case Works</h2>
 	</div>
 
+	<div class="project-tabs" role="tablist" aria-label="Case Works category tabs" style="margin-top:1rem;">
+		<button
+			type="button"
+			class={`project-tab ${activeProjectCategory === 'Infrastructure' ? 'active' : ''}`}
+			role="tab"
+			aria-selected={activeProjectCategory === 'Infrastructure'}
+			onclick={() => (activeProjectCategory = 'Infrastructure')}
+		>
+			Infrastructure & Ops
+		</button>
+		<button
+			type="button"
+			class={`project-tab ${activeProjectCategory === 'UI/UX' ? 'active' : ''}`}
+			role="tab"
+			aria-selected={activeProjectCategory === 'UI/UX'}
+			onclick={() => (activeProjectCategory = 'UI/UX')}
+		>
+			UI/UX Design
+		</button>
+	</div>
+
 	<div class="project-list grid-3" style="margin-top:1rem;">
-		{#each portfolioData.projects as project, index}
-			<article class="subcard punch-card fade-up" style={`--delay:${index + 1}`}>
-				<div class="project-media">
-					{#if project.image}
-						<img src={project.image} alt={project.name} loading="lazy" />
-					{:else}
-						<div style="display:grid; place-items:center; min-height:100%;">No preview</div>
-					{/if}
-				</div>
-				<h3>{project.name}</h3>
-				<p class="mono" style="margin:0.3rem 0;">{project.type}</p>
-				<p style="margin:0;">{project.description}</p>
-
-				<div class="pill-row" style="margin-top:0.65rem;">
-					{#each project.tech as tech}
-						<span class="pill" style="background: var(--bg-soft);">{tech}</span>
-					{/each}
-				</div>
-
-				<div class="overlay-actions" style="margin-top:0.75rem;">
-					{#if project.demo}
-						<a class="btn" href={project.demo} target="_blank" rel="noreferrer">Open Demo</a>
-					{/if}
-					{#if project.github}
-						<a class="btn ghost" href={project.github} target="_blank" rel="noreferrer">Source</a>
-					{/if}
-				</div>
+		{#if filteredProjects.length === 0}
+			<article class="subcard punch-card">
+				<h3>No projects in this category yet</h3>
+				<p style="margin:0.5rem 0 0;">Switch tabs to explore the other track.</p>
 			</article>
-		{/each}
+		{:else}
+			{#each filteredProjects as project, index}
+				<article class="subcard punch-card fade-up" style={`--delay:${index + 1}`}>
+					<div class="project-media">
+						{#if project.image}
+							<img src={project.image} alt={project.name} loading="lazy" />
+						{:else}
+							<div style="display:grid; place-items:center; min-height:100%;">No preview</div>
+						{/if}
+					</div>
+					<h3>{project.name}</h3>
+					{#if project.category === 'Infrastructure'}
+						<p class="mono" style="margin:0.3rem 0;">{project.type}</p>
+					{/if}
+					<p style="margin:0;">{project.description}</p>
+
+					<div class="pill-row" style="margin-top:0.65rem;">
+						{#each project.tech as tech}
+							<span class="pill" style="background: var(--bg-soft);">{tech}</span>
+						{/each}
+					</div>
+
+					<div class="overlay-actions" style="margin-top:0.75rem;">
+						{#if project.demo}
+							<a class="btn" href={project.demo} target="_blank" rel="noreferrer">Open Demo</a>
+						{/if}
+						{#if project.github}
+							<a class="btn ghost" href={project.github} target="_blank" rel="noreferrer">Source</a>
+						{/if}
+					</div>
+				</article>
+			{/each}
+		{/if}
 	</div>
 </section>
 

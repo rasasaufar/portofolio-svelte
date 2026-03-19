@@ -320,6 +320,40 @@ main {
   animation: ticker 18s linear infinite;
 }
 
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.project-tab {
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard-sm);
+  background: #fff;
+  padding: 0.45rem 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.project-tab:hover {
+  transform: translate(-2px, -2px);
+}
+
+.project-tab.active {
+  background: var(--bg-main);
+  box-shadow: var(--shadow-hard);
+  transform: translate(-2px, -2px);
+}
+
+.project-tab:focus-visible {
+  outline: 2px dashed var(--ink);
+  outline-offset: 2px;
+}
+
 @keyframes ticker {
   from {
     transform: translateX(0%);
