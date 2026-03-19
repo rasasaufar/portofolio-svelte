@@ -396,7 +396,7 @@
 
 		<div class="credentials-list grid-3" style="margin-top:0.85rem;">
 			{#each coreCertificates as certificate, index}
-				<article class="subcard punch-card fade-up credential-card credential-card-core" style={`--delay:${index + 1}`}>
+				<article class="subcard punch-card credential-card credential-card-core" style={`--delay:${index + 1}`}>
 					<div class="cert-logo">
 						<img src={certificate.image} alt={certificate.issuer} loading="lazy" />
 					</div>
