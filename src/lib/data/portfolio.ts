@@ -40,6 +40,7 @@ export type Project = {
   demo?: string;
   github?: string;
   image?: string;
+  imageDescription?: string;
 };
 
 export type Certificate = {
@@ -309,6 +310,9 @@ export const portfolioData = {
       description:
         'Engineered a robust Bash scripting solution for automated daily backups via Cron. Implemented a 10-day rolling retention policy across dual servers to optimize storage and ensure disaster recovery readiness. Managed application deployments utilizing SVN.',
       tech: ['Linux', 'Bash', 'Cron', 'SVN', 'Disaster Recovery'],
+      image: '/images/portfolio/automated-db-backup-rolling-retention.png',
+      imageDescription:
+        "A Neo-brutalist isometric illustration, bold black outlines, using solid yellow, pink, and light blue colors. A stylized data flow from a database cylinder labeled 'DB' through a gear-shaped machine with a clock face (cron) and folder icons. Below, a timeline with 10 slots filled with backup files, and an animated machine deleting the older 11th slot to show rolling retention. Clean geometric shapes, data center aesthetic.",
     },
     {
       name: 'Server Deployment & Process Management',
@@ -317,6 +321,9 @@ export const portfolioData = {
       description:
         'Executed the end-to-end deployment of the SISFOPAJAK application on bare-metal Ubuntu servers. Configured process management using PM2 to ensure zero-downtime restarts and high availability in a high-security production environment.',
       tech: ['Ubuntu', 'PM2', 'Deployment', 'Server Admin'],
+      image: '/images/portfolio/server-deployment-pm2.png',
+      imageDescription:
+        "A Neo-brutalist isometric illustration, bold black outlines, using solid teal, yellow, and red colors. A server rack filled with blocky bare-metal server blades. Above the rack, a large stylized screen displaying bold terminal-style text: 'PM2 STATUS: sys_app -> [online, 3 instances]'. Performance gauges next to it with blinking lights. A stylized rocket launching nearby. Geometric data aesthetic.",
     },
     {
       name: 'Final Project Redesign Maxim',
